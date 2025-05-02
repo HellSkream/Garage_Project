@@ -33,7 +33,7 @@ def dbTime():
 
 
 def Get_Weath():
-    api_key = "432dacf8f1e2875179ffefaeb14dc246"
+    api_key = os.getenv("WEATH_API_KEY")
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
     complete_url = base_url + "appid=" + api_key + "&q=perth,au"  # 2063523
     response = requests.get(complete_url)
