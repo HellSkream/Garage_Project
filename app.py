@@ -51,28 +51,44 @@ app.title = "Temperature Dashboard"
 
 # Layout
 app.layout = html.Div([
-    html.H2("Garage & Perth Temperature Over Time"),
-
-    html.Label("Select number of days to show:"),
-    dcc.Dropdown(
-        id='days-dropdown',
-        options=[
-            {"label": "1 Day", "value": 1},
-            {"label": "3 Days", "value": 3},
-            {"label": "7 Days", "value": 7},
-            {"label": "30 Days", "value": 30},
-        ],
-        value=7  # default to last 7 days
+    # Title
+    html.Div(
+        children=[html.H1("Temperature Data Dashboard")],
+        className='title-container'
     ),
 
-    dcc.Graph(id='temp-line-graph')
+    # Dropdown
+    html.Div(
+        children=[
+            dcc.Dropdown(
+                id='days-dropdown',
+                options=[
+                    {'label': f'{i} Days', 'value': i} for i in range(1, 8)
+                ],
+                value=7,
+                className='dcc-dropdown'
+            ),
+        ],
+        className='dropdown-container'
+    ),
+
+    html.Div(
+        children=[
+            dcc.Graph(
+                id='temp-graph',
+                className='graph'
+            ),
+        ],
+        className='graph-container'
+    ),
+
 ])
 
 
 # Callback to update graph
 @app.callback(
-    Output('temp-line-graph', 'figure'),
-    Input('days-dropdown', 'value')
+    Output('temp-graph', 'figure'),
+    [Input('days-dropdown', 'value')]
 )
 def update_graph(days):
     df = fetch_data(days)

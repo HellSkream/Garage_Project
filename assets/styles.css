@@ -1,0 +1,27 @@
+/* assets/styles.css */
+
+/* Center the title */
+h1 {
+    text-align: center;
+}
+
+/* Center the dropdown */
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Narrow down the width of the dropdown */
+.dropdown-container .days-dropdown {
+    width: 150px;
+}
+
+
+/* Center the graph and make it narrower */
+.graph-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
