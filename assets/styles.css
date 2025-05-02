@@ -1,5 +1,3 @@
-/* assets/styles.css */
-
 /* Center the title */
 h1 {
     text-align: center;
@@ -10,18 +8,23 @@ h1 {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 20px;
 }
 
-/* Narrow down the width of the dropdown */
-.dropdown-container .days-dropdown {
-    width: 150px;
+/* Adjusted width for better usability */
+.days-dropdown {
+    width: 125px; /* You can go wider if needed */
 }
 
-
-/* Center the graph and make it narrower */
+/* Make the graph wider but still centered */
 .graph-container {
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 95%; /* Looser than 80% */
     margin: 0 auto;
+}
+
+.graph {
+    width: 100%;
+    max-width: 1000px; /* Cap to prevent overexpansion */
 }

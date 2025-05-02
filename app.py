@@ -63,10 +63,10 @@ app.layout = html.Div([
             dcc.Dropdown(
                 id='days-dropdown',
                 options=[
-                    {'label': f'{i} Days', 'value': i} for i in range(1, 8)
+                    {'label': f'{i} Days', 'value': i} for i in [1,2,3,5,7,10,15,20]
                 ],
                 value=7,
-                className='dcc-dropdown'
+                className='days-dropdown'
             ),
         ],
         className='dropdown-container'
