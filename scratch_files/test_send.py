@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 from dotenv import load_dotenv
 #from datetime import datetime
 
@@ -12,9 +13,9 @@ TABLE_NAME = "test1"  # or whatever your table is called
 
 # Sample record to insert
 data = {
-    "garage_temp": 26.5,
-    "cpu_temp": 60.0,
-    "description": "test send 2"
+    "garage_temp": 22.,
+    "cpu_temp": 42.0,
+    "description": "test send 3"
 }
 
 # Headers
