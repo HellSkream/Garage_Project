@@ -76,7 +76,6 @@ app.layout = html.Div([
 )
 def update_graph(days):
     df = fetch_data(days)
-    print(len(df))
     latest_time = df["Log Time"].max()
     cutoff_time = latest_time - timedelta(days=days)
     df = df[df["Log Time"] >= cutoff_time]
@@ -89,12 +88,10 @@ def update_graph(days):
         title=f"Temperature (Last {days} Day{'s' if days > 1 else ''})"
     )
 
-    print(f"Latest timestamp in data: {latest_time}")
-    print(f"Cutoff timestamp: {cutoff_time}")
-
     fig.update_layout(legend_title_text="Series", xaxis_title="Time", yaxis_title="Temperature (°C)")
     return fig
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    render_port = int(os.environ.get("PORT", 8050))
+    app.run(host="0.0.0.0", port=render_port, debug=False)
