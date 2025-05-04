@@ -16,15 +16,63 @@ h1 {
     width: 125px; /* You can go wider if needed */
 }
 
+.gauge-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.gauge {
+    width: 30%;
+    text-align: center;
+}
+
+.weather-description {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
 /* Make the graph wider but still centered */
 .graph-container {
     display: flex;
     justify-content: center;
-    width: 95%; /* Looser than 80% */
+    width: 95%;
     margin: 0 auto;
 }
 
 .graph {
     width: 100%;
     max-width: 1000px; /* Cap to prevent overexpansion */
+}
+
+/* Container for the gauges */
+/* Container for the gauges */
+.gauge-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* space between gauges */
+    flex-wrap: nowrap; /* prevents wrapping */
+    margin: 20px auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Individual gauge block */
+.gauge-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+/* Description under gauge */
+.gauge-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
 }
