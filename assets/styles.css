@@ -76,3 +76,31 @@ h1 {
     text-align: center;
     color: #555;
 }
+
+
+/* Header styles */
+
+.header {
+    background-color: #1E3A8A; /* Dark blue background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-links a {
+    color: blue;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
