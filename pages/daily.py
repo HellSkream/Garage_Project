@@ -1,9 +1,9 @@
 import plotly.express as px
 from dash import dcc, html, Input, Output, register_page, callback
-from datetime import datetime, timedelta, timezone
+from datetime import timedelta
 from components.header import get_header  # Import the header component
-from utils.data_queries import fetch_data
-from utils.plot_functions import create_gauge
+from Garage_Project.utils.data_queries import fetch_data
+from Garage_Project.utils.plot_functions import create_gauge
 
 register_page(__name__, path="/daily")
 
