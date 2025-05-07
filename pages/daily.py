@@ -8,12 +8,7 @@ from utils.plot_functions import create_gauge
 register_page(__name__, path="/daily")
 
 layout = html.Div([
-    get_header(),
-    # Title
-    html.Div(
-        children=[html.H1("Daily Weather/Temperature Dashboard")],
-        className='title-container'
-    ),
+    get_header("Daily Weather/Temperature Dashboard"),
 
     # Dropdown
     html.Div(

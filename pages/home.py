@@ -4,11 +4,8 @@ from components.header import get_header  # Import the header component
 register_page(__name__, path="/")
 
 layout = html.Div([
-    get_header(),
+    get_header("Home"),
     # Title
-    html.Div(
-        children=[html.H1("Home")],
-        className='title-container'
-    ),
+    html.P("Under Construction")
     ])
 
