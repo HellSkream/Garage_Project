@@ -135,3 +135,42 @@ h1 {
 .nav-links:hover {
     text-decoration: underline;
 }
+
+.home-content {
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+a {
+    color: #1E3A8A;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column; /* ✅ Ensures links stack vertically */
+    align-items: center; /* ✅ Centers items */
+    padding: 0;
+}
+
+.link-item {
+    display: flex;
+    align-items: center; /* Align logo and text vertically */
+    gap: 15px; /* Space between logo and text */
+    padding: 10px 0;
+}
+
+.link-logo {
+    width: 40px; /* Adjust logo size */
+    height: auto;
+}

@@ -8,6 +8,7 @@ from utils.data_queries import fetch_data_by_date
 import matplotlib.pyplot as plt
 import io
 import base64
+from math import ceil, floor
 
 def create_gauge(title, value, min_val=0, max_val=100, unit="°C"):
     mygauge = go.Figure(go.Indicator(
@@ -55,6 +56,8 @@ def create_3month_mean(df, startdate):
     month1 = (startdate.strftime('%B'), startdate.strftime('%Y') )
     month2 = ((startdate + relativedelta(months=1)).strftime('%B'), (startdate + relativedelta(months=1)).strftime('%Y'))
     month3 = ((startdate + relativedelta(months=2)).strftime('%B'), (startdate + relativedelta(months=2)).strftime('%Y'))
+    maxtemp = ceil(max(df['Garage Temp'].max(), df['Perth Temp'].max()))
+    mintemp = floor(min(df['Garage Temp'].min(), df['Perth Temp'].min()))
 
     fig, ax = plt.subplots(2, 3, figsize=(20, 12))
     for xi, x in enumerate([month1,month2,month3]):
@@ -69,7 +72,7 @@ def create_3month_mean(df, startdate):
         pdf['Garage Temp'].mean().plot(color='gray', label='Garage Temp', ax=ax[0, xi])
         pdf['Perth Temp'].mean().plot(color='red', label='Perth Temp', ax=ax[1, xi])
         for i in [0, 1]:
-            ax[i, xi].set_ylim(10, 45)
+            ax[i, xi].set_ylim(mintemp, maxtemp)
             for j in pd.date_range('06:00', '18:00', freq='3h').time:
                 ax[i, xi].axvline(j, alpha=0.5)
         ax[0, xi].set_title(f'Daytime Garage Temps - {x[0]}-{x[1]}')
