@@ -87,7 +87,6 @@ def DayNight(xtime):
     else:
         return 'Night'
 
-
 def Code_Insulate(logdate):
     if logdate > pd.Timestamp('2023-11-22').date():
         return 'Yes'
