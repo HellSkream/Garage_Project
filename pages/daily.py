@@ -1,9 +1,8 @@
-import plotly.express as px
 from dash import dcc, html, Input, Output, register_page, callback
 from datetime import timedelta
 from components.header import get_header  # Import the header component
 from utils.data_queries import fetch_data
-from utils.plot_functions import create_gauge
+from utils.plot_functions import create_gauge, create_daily_line
 
 register_page(__name__, path="/daily")
 
@@ -78,14 +77,7 @@ def update_dashboard(days):
     df = df[df["Log Time"] >= cutoff_time]
 
     # Line chart
-    fig = px.line(
-        df,
-        x="Log Time",
-        y=["Garage Temp", "Perth Temp"],
-        labels={"value": "Temperature (°C)", "Log Time": "Time"},
-        title=f"Temperature (Last {days} Day{'s' if days > 1 else ''})"
-    )
-    fig.update_layout(legend_title_text="Series", xaxis_title="Time", yaxis_title="Temperature (°C)")
+    fig = create_daily_line(df, days)
 
     # Latest values for gauges
     latest = df.sort_values("Log Time").iloc[-1]

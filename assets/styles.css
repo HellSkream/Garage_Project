@@ -9,11 +9,20 @@ h1 {
     justify-content: center;
     width: 100%;
     margin-bottom: 20px;
+    padding-top: 15px;
 }
 
 /* Adjusted width for better usability */
 .days-dropdown {
     width: 125px; /* You can go wider if needed */
+}
+
+.monthly-dropdown-month {
+    width: 125px;
+}
+
+.monthly-dropdown-year {
+    width: 80px;
 }
 
 .gauge-container {
@@ -48,7 +57,11 @@ h1 {
     max-width: 1000px; /* Cap to prevent overexpansion */
 }
 
-/* Container for the gauges */
+.graph-month {
+    width: 100%;
+    max-width: 1200px; /* Cap to prevent overexpansion */
+}
+
 /* Container for the gauges */
 .gauge-container {
     display: flex;
@@ -85,6 +98,7 @@ h1 {
     align-items: center;
     background-color: #1E3A8A;
     padding: 15px;
+    padding-bottom: 15px;
     color: white;
 }
 
