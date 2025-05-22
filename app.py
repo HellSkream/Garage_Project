@@ -2,7 +2,10 @@ import dash
 import os
 from dash import html, page_container
 
-app = dash.Dash(__name__, use_pages=True)
+app = dash.Dash(
+    __name__,
+    use_pages=True,
+    )
 
 app.layout = html.Div([
     page_container  # This dynamically loads the selected page

@@ -22,7 +22,7 @@ layout = html.Div([
 
             html.Li([
                 html.Img(src="/assets/rasp-pi-logo.png", className="link-logo"),
-                html.A("Data collected on a Raspberry Pi", href="hhttps://www.raspberrypi.com/", target="_blank")
+                html.A("Data collected on a Raspberry Pi", href="https://www.raspberrypi.com/", target="_blank")
             ], className="link-item"),
 
             html.Li([
@@ -32,7 +32,7 @@ layout = html.Div([
 
             html.Li([
                 html.Img(src="/assets/github-logo.png", className="link-logo"),
-                html.A("GitHub Repository", href="hhttps://github.com/HellSkream/Garage_Project", target="_blank")
+                html.A("GitHub Repository", href="https://github.com/HellSkream/Garage_Project", target="_blank")
             ], className="link-item"),
 
             html.Li([
