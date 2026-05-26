@@ -24,7 +24,7 @@ layout = html.Div([
         ),
         dcc.Dropdown(
             id="year-dropdown",
-            options=[{"label": str(year), "value": str(year)} for year in range(2023, 2026)],
+            options=[{"label": str(year), "value": str(year)} for year in range(2023, 2027)],
             value="2025",  # Default selection
             placeholder="Select Year",
             className='monthly-dropdown-year'
